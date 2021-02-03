@@ -26,6 +26,7 @@ public class HomePageTest extends Base{
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
+		System.out.println("Hi");
 	}
 
 }
