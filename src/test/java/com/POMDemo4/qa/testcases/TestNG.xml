@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Suite">
+
+	<listeners>
+		<listener class-name="com.POMDemo4.qa.util.RetryListenerClass" />
+	</listeners>
+
+	<test name="Book Store App">
+
+		<classes>
+			<class name="com.POMDemo4.qa.testcases.HomePageTest" />
+			<class name="com.POMDemo4.qa.testcases.SBookStoreLoginTest" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->

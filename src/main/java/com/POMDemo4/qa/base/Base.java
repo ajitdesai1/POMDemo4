@@ -11,10 +11,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.POMDemo4.qa.util.Util;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 public class Base {
 	public static WebDriver driver;
 	public static Properties prop;
+	public static ExtentReports extent;
+	public static ExtentTest extentTest;
 	
 	public Base() {
 		prop = new Properties();

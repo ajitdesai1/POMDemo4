@@ -2,34 +2,33 @@ package com.POMDemo4.qa.testcases;
 
 import java.io.IOException;
 
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.POMDemo4.qa.util.TakeScreenshot;
 import com.POMDemo4.qa.base.Base;
-import com.POMDemo4.qa.pages.HomePage;
+import com.POMDemo4.qa.pages.SBookStoreLogin;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class HomePageTest extends Base{
-	HomePage homepage;
-	
-	public HomePageTest() {
+public class SBookStoreLoginTest extends Base{
+	SBookStoreLogin bookStoreLogin; 
+	public SBookStoreLoginTest() {
 		super();
+		TakeScreenshot.setExtent();
 	}
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		initlization();
-		TakeScreenshot.setExtent();
-		homepage = new HomePage();
+		bookStoreLogin = new SBookStoreLogin();
 	}
-	@Test
-	public void validatePageImgTest() {
-		extentTest = extent.startTest("validatePageImgTest");
-		Assert.assertTrue(homepage.validatePageImg());
+	@Test(priority=1)
+	public void loginTest() throws InterruptedException {
+		
+		extentTest = extent.startTest("SBookStoreLogin");
+		bookStoreLogin.login();
 	}
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
@@ -50,9 +49,10 @@ public class HomePageTest extends Base{
 		extent.endTest(extentTest); // ending test and ends the current test and prepare to create html report
 		driver.quit();
 	}
-//	@AfterTest
-//	public void endReport() {
-//		extent.flush();
-//		extent.close();
-//	}
+	@AfterTest
+	public void endReport() {
+		extent.flush();
+		extent.close();
+	}
+
 }

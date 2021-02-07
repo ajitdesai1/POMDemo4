@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.POMDemo4.qa.base.Base;
 import com.POMDemo4.qa.util.Xls_Reader;
 
-public class BookStoreLogin extends Base{
+public class SBookStoreLogin extends Base{
 
 	@FindBy(xpath = "//h5[contains(text(),'Book Store Application')]")
 	WebElement bookStoreMenuSelect;
@@ -25,16 +25,14 @@ public class BookStoreLogin extends Base{
 	@FindBy(xpath = "//button[@id='submit']")
 	WebElement logout;
 	
-	public BookStoreLogin() {
+	public SBookStoreLogin() {
 		PageFactory.initElements(driver,this);
 	}
-	public void selectBookStorefromHomePage() throws InterruptedException {
+	public void login() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");		
 		bookStoreMenuSelect.click();
 		Thread.sleep(2000);
-	}
-	public void login() throws InterruptedException {
 
 		loginBtn.click();
 		Xls_Reader reader = new Xls_Reader("./src/main/java/com/POMDemo4/qa/util/SampleExcel.xlsx");
