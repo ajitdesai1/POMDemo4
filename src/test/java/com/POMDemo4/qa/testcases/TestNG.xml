@@ -11,6 +11,7 @@
 		<classes>
 			<class name="com.POMDemo4.qa.testcases.HomePageTest" />
 			<class name="com.POMDemo4.qa.testcases.SBookStoreLoginTest" />
+		
 		</classes>
 	</test> <!-- Test -->
 
